@@ -15,7 +15,7 @@ const TrendingPicks = ({title}) => {
 
   useEffect(()=>{
     dispatch(getTrending())
-  }, [])
+  }, [dispatch])
 
 //   console.log(trending);
 
