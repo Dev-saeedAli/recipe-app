@@ -2,12 +2,19 @@ import React, { useEffect } from 'react'
 import "../starterPage/starterPage.css"
 import starterImage from "../../assets/onboardImage.png"
 import { useNavigate } from 'react-router'
-import { useDispatch } from 'react-redux'
-import { getUserDetails } from '../../features/userAuthenticationSlice/userAuthSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchData, getUserDetails } from '../../features/userAuthenticationSlice/userAuthSlice'
 
 const StarterPage = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  const { user } = useSelector(state => state.users)
+  console.clear()
+
+  useEffect(()=>{
+  dispatch(fetchData(user?.email))
+  }, [user])
+
 
   return (
     <div>

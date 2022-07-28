@@ -7,6 +7,7 @@ import TrendingPicks from '../../components/trendingPicks/Trending'
 
 
 const Home = () => {
+  console.clear()
   
   return (
     <div className='home-section'>

@@ -4,7 +4,9 @@ import { db, auth ,  provider } from "../../firebase/firebase_Configue"
 import { signInWithPopup } from "firebase/auth"
 import { doc, setDoc } from "firebase/firestore";
 
+
 const userInfo = localStorage.getItem("user") != "" ? JSON.parse(localStorage.getItem("user")) : [];
+
 const initialState = {
     user : userInfo ,
     loading : false,
@@ -21,11 +23,15 @@ export const getUserDetails = createAsyncThunk("user/getUserDetails",  async () 
     }
     await localStorage.setItem("user", JSON.stringify(userList))
     await window.location.reload()
-    await setDoc(doc(db, "users", data?.email), ({
-       ...data,
-        name : data?.displayName
-    }))
+
 })
+
+export const fetchData = createAsyncThunk("user/fetchData", async (user) => {
+    await setDoc(doc(db, "users", user), {
+       ...db,
+        name : user
+    })
+})  
 
 
 const userAuth = createSlice({
@@ -40,6 +46,16 @@ const userAuth = createSlice({
             state.loading = false
         },
         [getUserDetails.rejected] : (state, action) => {
+            state.loading = false
+            state.error = action.payload
+        },
+        [fetchData.pending] : (state) => {
+            state.loading = true
+        },
+        [fetchData.fulfilled] : (state, action) => {
+            state.loading = false
+        },
+        [fetchData.rejected] : (state, action) => {
             state.loading = false
             state.error = action.payload
         },

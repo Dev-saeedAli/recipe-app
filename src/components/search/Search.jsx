@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import "../search/search.css"
+import "./search.css"
 import { BsSearch } from "react-icons/bs"
 import { useDispatch } from 'react-redux'
 import { getMealDetails } from '../../features/areaMealsSlice/areaMealsSlice'

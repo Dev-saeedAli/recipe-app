@@ -10,7 +10,7 @@ export const getAreaMeals = createAsyncThunk("areaMeals/getAreaMeals", async (na
     try{
         const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${name}`)
         const data = await response.json()
-        console.clear()
+        // console.clear()
         return data.meals
     }catch (error) {
         return error.message
@@ -20,7 +20,7 @@ export const getMealDetails = createAsyncThunk("areaMeals/getMealDetails", async
     try{
         const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
         const data = await response.json()
-        console.clear()
+        // console.clear()
        return data.meals
 
     }catch (error) {

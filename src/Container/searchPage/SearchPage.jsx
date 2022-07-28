@@ -7,6 +7,7 @@ import Dishes from "../../components/dishes/Dishes"
 
 const HomePage = ({setTab}) => {
   setTab(window.location.pathname)
+  console.clear()
 
   
   return (

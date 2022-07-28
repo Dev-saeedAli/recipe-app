@@ -12,7 +12,7 @@ export const getFavourites = createAsyncThunk("favourites/getFavourites", async 
     const userCollectionRef = collection(db, "users")
     const response = await getDocs(userCollectionRef)
     const data = await response.docs.map(doc => ({...doc.data(), id : doc.id}))
-    console.clear()
+    // console.clear()
     return data
 }) 
 

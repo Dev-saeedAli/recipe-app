@@ -11,7 +11,7 @@ const initialState =
     export const getVeggies = createAsyncThunk("veggie/getVeggies", async () =>{
         const response = await fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Vegetarian");
         const data = await response.json()
-        console.clear()
+        // console.clear()
         return data.meals;
     })
 

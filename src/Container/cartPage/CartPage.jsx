@@ -24,6 +24,8 @@ const CartPage = ({setTab}) => {
   const { user } = useSelector(state => state.users)
   let [cart, setCart ] = useState([])
   let [cartQty, setCartQty] = useState(1)
+  
+  console.clear()
 
   const filteredUser = cartItems.filter(item => item.id === user?.email);
   let filteredCart =  filteredUser[0]?.cart?.map(item => item)

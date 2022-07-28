@@ -14,6 +14,7 @@ import { getFavMeal } from '../../features/veggieSlice/veggieDetails'
 
 const Favourite = ({setTab}) => {
     setTab(window.location.pathname)
+    console.clear()
 
     const navigate = useNavigate()
     const dispatch = useDispatch()

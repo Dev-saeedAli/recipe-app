@@ -1,23 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "../profile/profile.css"
 import userImage from "../../assets/user.jpg"
 import { useDispatch, useSelector } from 'react-redux/es/exports'
 import { auth} from '../../firebase/firebase_Configue'
 import { signOut } from 'firebase/auth'
 import { useNavigate } from 'react-router'
-import { getUserDetails } from '../../features/userAuthenticationSlice/userAuthSlice'
+import { fetchData, getUserDetails } from '../../features/userAuthenticationSlice/userAuthSlice'
 
 const Profile = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { user } = useSelector(state => state.users)
+  console.clear()
+
+  useEffect(()=>{
+    dispatch(fetchData(user?.email))
+    }, [user])
+  
 
   const userLogout = async() => {
     await signOut(auth)
     await localStorage.clear()
     await window.location.reload()
   }
-  console.log(user == null);
 
   return (
     <div className='profile'>

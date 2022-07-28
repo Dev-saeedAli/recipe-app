@@ -11,6 +11,8 @@ import { ToastContainer, toast } from "react-toastify";
 
 const DetailPage = ({setTab, tab}) => {
   setTab(window.location.pathname)
+  console.clear()
+
 
   const navigate = useNavigate()
   const [checked, setChecked] = useState(false)
