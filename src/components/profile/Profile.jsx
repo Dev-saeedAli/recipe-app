@@ -3,7 +3,6 @@ import userImage from "../../assets/user.jpg"
 import { useDispatch, useSelector } from 'react-redux/es/exports'
 import { auth} from '../../firebase/firebase_Configue'
 import { signOut } from 'firebase/auth'
-import { useNavigate } from 'react-router'
 import { getUserDetails } from '../../features/userAuthenticationSlice/userAuthSlice'
 
 const Profile = () => {
