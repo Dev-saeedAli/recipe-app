@@ -28,7 +28,6 @@ const Favourite = ({setTab}) => {
     }, [dispatch])
     
     const favourites = myFav?.filter(item => item?.id === user?.email)
-    // console.log(favourites[0]?.favourites.map(item => item.id));
     
     const deleteFav = async (passedId) =>{
         const result = await favourites[0]?.favourites.map(fav => fav).filter(item => item.id != passedId)
@@ -58,13 +57,13 @@ const Favourite = ({setTab}) => {
         </div>
         <ToastContainer/>
            {
-               favourites[0]?.favourites != "" ?  loading ? (
+              loading ?  (
                 <div className='favourite'>
                     <div className="favourite-container">
                         <h4>Loading...</h4>
                     </div>
                 </div>
-            ) : ( 
+            ): favourites[0]?.favourites != "" ?   ( 
                 favourites[0]?.favourites?.map((item, index) => ( 
                     <div key={index} className='favourite'>
                     <div className="favourite-container">

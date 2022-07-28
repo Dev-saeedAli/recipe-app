@@ -11,12 +11,7 @@ const Profile = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { user } = useSelector(state => state.users)
-  console.clear()
-
-  useEffect(()=>{
-    dispatch(fetchData(user?.email))
-    }, [user])
-  
+  // console.clear()
 
   const userLogout = async() => {
     await signOut(auth)
@@ -31,7 +26,7 @@ const Profile = () => {
         <p>What do you want today</p>
       </div>
       <div className="profile-image">
-        <img src={user === "" || user === null ? userImage : user?.photo} alt="userimage" />
+        <img src={user === "" || user === null ? userImage : user?.image} alt="userimage" />
         { user !== null ?<button className='btn-main' onClick={userLogout}>logout</button> : <button className='btn-main' onClick={()=> dispatch(getUserDetails())}>login</button> }
       </div>
     </div>

@@ -11,7 +11,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 const DetailPage = ({setTab, tab}) => {
   setTab(window.location.pathname)
-  console.clear()
+  // console.clear()
 
 
   const navigate = useNavigate()

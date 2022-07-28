@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "../header/header.css"
 import { AiFillHome } from "react-icons/ai"
 import { BiDetail } from "react-icons/bi"
@@ -16,8 +16,6 @@ const Header = ({tab}) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  
-  
   return (
     <div className='header'>
       <ToastContainer/>

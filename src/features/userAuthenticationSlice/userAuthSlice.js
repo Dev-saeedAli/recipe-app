@@ -2,11 +2,12 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import { db, auth ,  provider } from "../../firebase/firebase_Configue"
 // import { setDoc, doc } from "firebase/firestore"
 import { signInWithPopup } from "firebase/auth"
-import { doc, setDoc } from "firebase/firestore";
+import { collection, doc, getDocs, setDoc, updateDoc } from "firebase/firestore";
+
+const collectionRef = collection(db, "users")
 
 
 const userInfo = localStorage.getItem("user") != "" ? JSON.parse(localStorage.getItem("user")) : [];
-
 const initialState = {
     user : userInfo ,
     loading : false,
@@ -14,24 +15,34 @@ const initialState = {
 } 
 
 export const getUserDetails = createAsyncThunk("user/getUserDetails",  async () => {
-    const response = await signInWithPopup(auth, provider)
-    const data = await response.user
-    const userList = await  {
+   try{
+    const response = await  signInWithPopup(auth, provider)
+    const data = response.user
+    const firebaseDoc  = await getDocs(collectionRef)
+    await firebaseDoc.docs.map(doc => doc.data().email).map(email => {
+        if(email.includes(data?.email)){
+             updateDoc(doc(db, "users", data?.email), {
+                email :  data?.email
+            })
+        }else{
+             setDoc(doc(db, "users", data?.email), {
+                email :  data?.email
+            })
+        }
+    })
+    const userData = {
+        email : data?.email, 
         name : data.displayName,
-        photo : data.photoURL,
-        email : data.email
+        image : data?.photoURL
     }
-    await localStorage.setItem("user", JSON.stringify(userList))
+    await localStorage.setItem("user", JSON.stringify(userData))
     await window.location.reload()
 
+   }catch (error){
+    console.log(error.message);
+   }
 })
 
-export const fetchData = createAsyncThunk("user/fetchData", async (user) => {
-    await setDoc(doc(db, "users", user), {
-       ...db,
-        name : user
-    })
-})  
 
 
 const userAuth = createSlice({
@@ -46,16 +57,6 @@ const userAuth = createSlice({
             state.loading = false
         },
         [getUserDetails.rejected] : (state, action) => {
-            state.loading = false
-            state.error = action.payload
-        },
-        [fetchData.pending] : (state) => {
-            state.loading = true
-        },
-        [fetchData.fulfilled] : (state, action) => {
-            state.loading = false
-        },
-        [fetchData.rejected] : (state, action) => {
             state.loading = false
             state.error = action.payload
         },
