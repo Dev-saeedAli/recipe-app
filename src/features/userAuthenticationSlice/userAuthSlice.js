@@ -3,7 +3,6 @@ import { db, auth ,  provider } from "../../firebase/firebase_Configue"
 // import { setDoc, doc } from "firebase/firestore"
 import { signInWithPopup } from "firebase/auth"
 import { doc, setDoc } from "firebase/firestore";
-import "react-toastify/dist/ReactToastify.css";
 
 const userInfo = localStorage.getItem("user") != "" ? JSON.parse(localStorage.getItem("user")) : [];
 const initialState = {

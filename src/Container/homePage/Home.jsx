@@ -6,8 +6,7 @@ import NonVeggiePicks from '../../components/NonVeggiePicks/NonVeggiePicks'
 import TrendingPicks from '../../components/trendingPicks/Trending'
 
 
-const Home = ({setTab}) => {
-  setTab(window.location.pathname)
+const Home = () => {
   
   return (
     <div className='home-section'>

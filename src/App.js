@@ -9,9 +9,11 @@ import Home from './Container/homePage/Home';
 import Favourite from './Container/favouritePage/Favourite';
 import FavMealsDetails from './components/favMealsDetails/FavMealsDetails';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 function App() {
   const [tab, setTab] = useState("")
+  // const { user } = useSelector(state => state.users)
 
   return (
     <div className="app">
@@ -21,7 +23,7 @@ function App() {
        <Route path="/search" element={<SearchPage setTab={setTab}/>}/>
        <Route path="/details" element={<DetailPage setTab={setTab} tab={tab}/>}/>
        <Route path="/saved" element={<FavMealsDetails setTab={setTab}/>}/>
-       <Route path="/home" element={<Home setTab={setTab}/>}/>
+       <Route path="/home" element={<Home setTab={setTab} tab={tab}/>}/>
        <Route path="/cart" element={<CartPage setTab={setTab}/>}/>
        <Route path="/favourites" element={<Favourite setTab={setTab}/>}/>
       </Routes>
