@@ -1,0 +1,49 @@
+.checkout {
+    background: var(--white);
+    margin: 20px 0px 10px;
+}
+.checkout-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px ;
+}
+.checkout-header h5{
+    font-size: 1rem;
+}
+.checkout-header p{
+    font-size: 1.1rem;
+    font-weight: 900;
+}
+.checkout .btn{
+    width: 100%;
+    background: var(--orange) ;
+    color: var(--white);
+    border: none;
+    outline: none;
+    padding: 7px 4px;
+    border-radius: 10px;
+    font-size: .9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.checkout .btn.active{
+    width: 100%;
+    background: var(--orange) ;
+    color: var(--white);
+    border: none;
+    outline: none;
+    padding: 7px 4px;
+    border-radius: 10px;
+    font-size: .9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .3s ease;
+    opacity: .6;
+}
+.checkout button:hover{
+    background: var(--orange-hover);
+}

@@ -1,0 +1,46 @@
+.header{
+    position: fixed;
+    bottom: 0px;
+    right: 100px;
+    left: 100px;
+    margin: 0px 260px;
+    display: flex;
+    background: white;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 0px;
+    z-index: 200;
+}
+@media  (max-width: 600px) {
+    .header{
+        margin: 0;
+        /* bottom:0; */
+        right: 0;
+        left: 0;
+    }
+}
+
+.header svg{
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--silver);
+    transition: all .3s ease;
+}
+.header svg:hover{
+    color: var(--orange-hover)
+}
+.header svg.active{
+    position: relative;
+    bottom: 20px;
+    font-size: 2.6rem;
+    border: 2px solid var(--orange);
+    border-radius: 30px;
+    padding: 8px 6px;
+    background: white;
+    color: var(--orange);
+    transition: all .3s ease;
+}
+.header svg.active:hover{
+    background: var(--orange-hover);
+    color: white;
+}

@@ -1,0 +1,98 @@
+.cart-section {
+    background: rgb(250, 250, 250);
+    font-family: var(--font-family);
+    margin-bottom: 65px;
+
+}
+.carts{
+    width: 500px;
+    max-width: 100%;
+    margin-bottom: 5px;
+}
+.cart-header{
+    display: flex;
+    align-items: center;
+    padding: 10px 2px;
+    gap: 4px;
+    cursor: pointer;
+    background: var(--white);
+    /* margin-bottom: 10px; */
+}
+.cart-header svg{
+    font-size: 1.4rem;
+}
+.carts .cart-container{
+    padding: 6px 8px;
+
+}
+.carts .cart-container .cart-item{
+    background: var(--white);
+    padding: 13px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 1px 1px 5px -1px #242424b3;
+    -webkit-box-shadow: 1px 1px 5px -1px #242424b3;
+    -moz-box-shadow: 1px 1px 5px -1px r#242424b3;
+    border-radius: 10px;
+    margin: 10px 0px;
+}
+.carts .cart-container .cart-image{
+    width: 70px;
+}
+.carts .cart-container .cart-image img{
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+}
+.carts .cart-container .cart-item .cart-item-name{
+    margin: 0px 8px;
+    text-align: left;
+    flex: 1;
+    /* background: rebeccapurple; */
+
+}
+.carts .cart-container .cart-item .cart-item-name h3{
+    font-size: 1rem;
+}
+.carts .cart-container .cart-item .cart-item-name p{
+    font-size: .8rem;
+    color: var(--silver);
+    margin-bottom: 10px;
+}
+.carts .cart-container .cart-item .cart-item-name span{
+    font-size: .8rem;
+    font-weight: 900;
+}
+.carts .cart-container .cart-item .cart-item-name span:last-child{
+    color: red;
+    margin: 10px 0px 0px 50px;
+    font-size: 1.1rem;
+    transition:  all .3s ease;
+}
+.carts .cart-container .cart-item .cart-item-name span:last-child:hover{
+    cursor: pointer;
+    color: #d41717;
+}
+
+.carts .cart-container .cart-item .cart-quantity{
+    padding: 0px 10px;
+}
+.carts .cart-container .cart-item .cart-quantity p{
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+.carts .cart-container .cart-item .cart-quantity .cart-svg{
+    background: var(--orange);
+    border-radius: 10px;
+    padding: 3px 6px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+}
+.carts .cart-container .cart-item .cart-quantity .cart-svg svg{
+    margin: 0px 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 900;
+}

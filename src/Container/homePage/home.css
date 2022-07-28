@@ -1,0 +1,40 @@
+.home-section{
+    padding: 0px 0px 40px;
+}
+.home-section h2{
+    font-size: 1rem;
+    text-align: left;
+    margin-bottom: 10px;
+    font-family: var(--font-family);
+    padding: 5px 10px;
+}
+.home-picks{
+    overflow-x: scroll !important;
+    font-family: var(--font-family);
+    display: flex;
+    padding: 5px 10px;
+    gap: 10px 7px;
+}
+.home-picks::-webkit-scrollbar{
+    display: none;
+}
+.home-picks .home-image{
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+.home-picks .home-image h4{
+    color: var(--white);
+    font-size: .7rem;
+    padding: 0px 6px;
+    width: 100px;
+}
+.picks-section{
+    margin-bottom: 40px;
+    background: rgb(252, 252, 252);
+}

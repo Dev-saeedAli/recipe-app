@@ -1,0 +1,118 @@
+.favourites-section {
+    background: rgb(250, 250, 250);
+    font-family: var(--font-family);
+    margin-bottom: 60px;
+}
+.favourites-section .favourites-header{
+    display: flex;
+    align-items: center;
+    padding: 10px 2px;
+    gap: 4px;
+    cursor: pointer;
+    background: var(--white);
+    margin-bottom: 10px;
+}
+.favourite{
+    width: 500px;
+    max-width: 100%;
+    margin-bottom: 5px;
+}
+.favourite-header{
+    display: flex;
+    align-items: center;
+    padding: 10px 2px;
+    gap: 4px;
+    cursor: pointer;
+    background: var(--white);
+    margin-bottom: 10px;
+}
+.favourite-header svg{
+    font-size: 1.4rem;
+}
+.favourite .favourite-container{
+    padding: 6px 8px;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+.favourite .favourite-container:hover{
+    background: var(--orange);
+}
+.favourite .favourite-container .favourite-item{
+    background: var(--white);
+    padding: 13px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 1px 1px 5px -1px #242424b3;
+    -webkit-box-shadow: 1px 1px 5px -1px #242424b3;
+    -moz-box-shadow: 1px 1px 5px -1px r#242424b3;
+    border-radius: 10px;
+    
+}
+.favourite .favourite-container .favourite-image{
+    width: 60px;
+}
+.favourite .favourite-container .favourite-image img{
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 100%;
+}
+.favourite .favourite-container .favourite-item .favourite-item-name{
+    margin: 0px 8px;
+    text-align: left;
+    flex: 1;
+}
+.favourite .favourite-container .favourite-item .favourite-item-name h3{
+    font-size: 1rem;
+}
+.favourite .favourite-container .favourite-item .favourite-item-name p{
+    font-size: .9rem;
+    color: var(--silver);
+}
+.favourite .favourite-container .favourite-item .favourite-item-name span{
+    font-size: .7rem;
+    color: var(--silver);
+    font-weight: 900;
+}
+.favourite .favourite-container .favourite-item .favourite-quantity{
+    padding: 0px 10px;
+}
+.favourite .favourite-container .favourite-item .favourite-quantity p{
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+.favourite .favourite-container .favourite-item .favourite-quantity .favourite-svg{
+    background: var(--orange);
+    border-radius: 10px;
+    padding: 3px 6px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+}
+.favourite .favourite-container .favourite-item .favourite-quantity .favourite-svg svg{
+    margin: 0px 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 900;
+    margin: 0px 10px;
+}
+.favourite .favourite-svg{
+    padding: 0px 10px;
+}
+.favourite .favourite-svg svg{
+   font-size: 1.3rem;
+   cursor: pointer;
+   margin: 0px 6px 0px 0px;
+   transition:  all .3s ease;
+}
+.favourite .favourite-svg svg:hover{
+    color: var(--orange);
+}
+.favourite .favourite-svg svg:last-child{
+    transition:  all .3s ease;
+   font-size: 1.3rem;
+   cursor: pointer;
+}
+.favourite .favourite-svg svg:last-child:hover{
+    color: red;
+}
