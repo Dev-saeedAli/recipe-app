@@ -21,7 +21,7 @@ export const getUserDetails = createAsyncThunk("user/getUserDetails",  async () 
         email : data.email
     }
     await localStorage.setItem("user", JSON.stringify(userList))
-    // await window.location.reload()
+    await window.location.reload()
     await setDoc(doc(db, "users", data?.email), ({
        ...data,
         name : data?.displayName
